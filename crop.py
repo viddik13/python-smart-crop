@@ -1,4 +1,5 @@
 import os
+import argparse
 
 from smartcrop import smart_crop
 

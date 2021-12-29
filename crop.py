@@ -8,13 +8,13 @@ def main(image_file_path, crop_width, crop_height, output_folder_cropped_image):
     if os.path.isfile(image_file_path): # Does bob.txt exist?  Is it a file, or a directory?
         filename = os.path.basename(image_file_path)
         outpath = os.path.join(output_folder_cropped_image, filename)
-        smart_crop(image_file_path, crop_width, crop_height, outpath, false)
+        smart_crop(image_file_path, crop_width, crop_height, outpath, False)
 
     elif os.path.isdir(image_file_path):
         with os.scandir(image_file_path) as it:
             for image_file in it:
                 outpath = os.path.join(output_folder_cropped_image, image_file.name)
-                smart_crop(image_file.path, crop_width, crop_height, outpath, false)
+                smart_crop(image_file.path, crop_width, crop_height, outpath, False)
 
     else:
         print("Error: input path not a file or directory?")
